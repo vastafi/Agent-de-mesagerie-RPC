@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcAgent";
+
+package GrpcAgent;
+
+service Publisher {
+
+  rpc PublishMessage (PublisherRequest) returns (PublisherReply);
+}
+
+message PublisherRequest {
+  string topic = 1;
+  string content = 2;
+  }
+
+message PublisherReply {
+  bool isSuccess=1;
+}
